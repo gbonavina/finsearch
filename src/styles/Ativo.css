@@ -1,0 +1,196 @@
+:root {
+  --primary-bg: #000;
+  --secondary-bg: #1A1A1A;
+  --tertiary-bg: #222;
+  --accent-color: #D1A05A;
+  --text-color: #fff;
+  --font-family: 'Istok Web', sans-serif;
+  --border-radius: 12px;
+  --shadow: 2px 2px 10px rgba(255, 255, 255, 0.2);
+}
+
+.ativo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--primary-bg);
+  color: var(--text-color);
+  padding: 20px;
+  position: relative; /* Para posicionamento absoluto dos elementos */
+}
+
+/* Container para a seta e a logo */
+.back-container a {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+}
+
+.back-logo {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+  /* Garante que mesmo invisível ela receba eventos de mouse */
+  pointer-events: all;
+}
+
+.back-logo:hover {
+  animation: blink 2s ease-in-out 1;
+}
+
+@keyframes blink {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+
+
+
+/* Seta de voltar */
+.back-arrow {
+  width: 40px;
+  height: auto;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.back-arrow:hover {
+  opacity: 0.8;
+}
+
+/* Cabeçalho do ativo */
+.ativo-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.ativo-header img {
+  width: 80px;
+  height: 80px;
+}
+
+/* Container dos indicadores */
+.indicadores-container {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: -14px;
+  width: 90%;
+}
+
+/* Caixa de indicador */
+.indicador {
+  background-color: var(--secondary-bg);
+  border-radius: var(--border-radius);
+  width: 200px;
+  text-align: center;
+  font-family: 'Istok Web', sans-serif;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out;
+}
+
+.indicador:hover {
+  transform: scale(1.05);
+}
+
+.indicador-header {
+  background-color: #333;
+  color: var(--accent-color);
+  font-size: 17px;
+  font-family: 'Istok Web', sans-serif;
+  font-weight: bold;
+  padding: 8px;
+}
+
+.indicador-valor {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.grafico-cotacao-container {
+  width: 90%;
+  margin: 0 auto;
+  background: #1e1e1e;
+  padding: 20px;
+  border-radius: 8px;
+  color: #fff;
+  font-family: 'Istok Web', sans-serif;
+  margin-top: 45px;
+}
+
+.cabecalho-grafico {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.controles {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-ativo, .btn-inativo {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-ativo {
+  background-color: #C4A484;
+  color: #000;
+}
+
+.btn-inativo {
+  background-color: #333;
+  color: #ccc;
+}
+
+.grafico-container {
+  background: #222;
+  border-radius: 8px;
+  padding: 10px;
+  height: 420px;
+}
+
+.texto-investimento {
+  margin-top: 20px;
+  font-family: 'Istok Web', sans-serif;
+  font-size: 16px;
+  background: #2c2f36;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.arrow-icon-up {
+  width: 32px;  /* ajuste esse valor conforme necessário */
+  height: auto;
+  margin-top: -5px;
+  margin-left: 10px;
+  align-items: center;
+}
+
+.arrow-icon-down {
+  width: 32px;  /* ajuste esse valor conforme necessário */
+  height: auto;
+  margin-top: -5px;
+  margin-left: 10px;
+  align-items: center;
+  transform: rotate(180deg);
+}
