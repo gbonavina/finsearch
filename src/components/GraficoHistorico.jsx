@@ -25,7 +25,9 @@ function CustomTooltip({ active, payload }) {
           borderRadius: "5px",
           color: "#fff",
           fontSize: "14px",
-          boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.3)"
+          boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.3)",
+          fontFamily: 'Istok Web'
+          
       }}>
         <p>📅 Data: <strong>{formatDate(payload[0].payload.date)}</strong></p>
         <p>💰 Fechamento: <strong>R$ {payload[0].value.toFixed(2)}</strong></p>
