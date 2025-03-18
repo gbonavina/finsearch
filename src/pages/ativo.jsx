@@ -69,12 +69,17 @@ function Ativo() {
         </div>
       </div>
 
-        <div className="indicador">
-          <div className="indicador-header">P/L</div>
-          <div className="indicador-valor">
-            <span>{dadosAtivo ? dadosAtivo.p_l : "CARREGANDO..."}</span>
-          </div>
+      <div className="indicador">
+        <div className="indicador-header">
+          {dadosAtivo && dadosAtivo.p_l ? "P/L" : "LIQUIDEZ DIÁRIA"}
         </div>
+        <div className="indicador-valor">
+          <span>
+            {dadosAtivo ? (dadosAtivo.p_l ? dadosAtivo.p_l : dadosAtivo.liquidez_di_ria) : "CARREGANDO..."}
+          </span>
+        </div>
+      </div>
+
         <div className="indicador">
           <div className="indicador-header">P/VP</div>
           <div className="indicador-valor">
