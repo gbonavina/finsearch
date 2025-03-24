@@ -16,7 +16,7 @@ function Ativo() {
 
   useEffect(() => {
     axios
-      .get(`https://dashboard-api.up.railway.app/stock/last_value/${ticker}`)
+      .get(`https://dashboard-api-l4m3.onrender.com/stock/last_value/${ticker}`)
       .then((response) => {
         console.log("Dados do ativo: ", response.data);
         setDadosAtivo(response.data);
@@ -56,7 +56,6 @@ function Ativo() {
             {dadosAtivo ? `${dadosAtivo.variacao__12m_}` : "CARREGANDO..."}
           </span>
           {dadosAtivo && (() => {
-            // Remove o % e converte vírgula para ponto
             const variacaoNum = parseFloat(dadosAtivo.variacao__12m_.replace("%", "").replace(",", "."));
             if (variacaoNum > 0) {
               return <img src={arrowUp} alt="Seta para cima" style={{ marginLeft: "5px" }} className="arrow-icon-up"/>;
