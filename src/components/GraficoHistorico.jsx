@@ -9,13 +9,11 @@ import {
   ResponsiveContainer 
 } from "recharts";
 
-// Função para formatar a data: "YYYY-MM-DD" para "DD/MM/YYYY"
 function formatDate(dateString) {
   const [year, month, day] = dateString.split("-");
   return `${day}/${month}/${year}`;
 }
 
-// Custom Tooltip que exibe a data e o fechamento
 function CustomTooltip({ active, payload }) {
   if (active && payload && payload.length) {
     return (
@@ -46,7 +44,7 @@ function GraficoCotacao({ ticker }) {
   const carregarDados = useCallback(async (periodo) => {
     setLoading(true);
     try {
-      const response = await axios.get(`https://dashboard-api.up.railway.app/stock/daily/${ticker}?anos=${periodo}`);
+      const response = await axios.get(`https://dashboard-api-l4m3.onrender.com/stock/daily/${ticker}?anos=${periodo}`);
       if (response.data && response.data.length > 0) {
         setDados(response.data);
       } else {
@@ -58,13 +56,12 @@ function GraficoCotacao({ ticker }) {
     } finally {
       setLoading(false);
     }
-  }, [ticker]); // A função depende de 'ticker'
+  }, [ticker]); 
 
   useEffect(() => {
     carregarDados(anos);
   }, [anos, carregarDados]);
 
-  // Handler para atualizar o período
   const handlePeriodo = (periodo) => {
     setAnos(periodo);
   };
